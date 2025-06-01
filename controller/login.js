@@ -39,6 +39,7 @@ const login=async(req,res)=>{
             const token = await jwt.sign(tokendata, process.env.JWT_SECRET, {expiresIn : "8h"})
 
             const tokenOption = {
+               sameSite: "None", 
                 httpOnly : true,
                 secure:true
             }
