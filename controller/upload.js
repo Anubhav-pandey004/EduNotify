@@ -20,12 +20,12 @@ const upload = async(req, res) => {
             const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
             const subjects = Object.keys(data[0]).filter(key => key.toLowerCase().endsWith('_score'));
-            console.log("Subjects are " , subjects);
+           
             
             // Loop through the data and send emails sequentially using async/await
             for (const el of data) {
                 const results = generateEmailMessage(el,subjects);
-                console.log("Result is :::",results);
+                
                 
                 await sendEmail(results);  // Ensure each email is sent before moving to the next
             }
