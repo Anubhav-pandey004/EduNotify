@@ -8,7 +8,7 @@ const ConnectDB = require('./config/db')
 app.use(cookieParser());
 
 app.use(cors({
-    origin: "http://localhost:5174",
+    origin: "https://edunotify-automated-student-result.onrender.com",
     credentials: true,
   }));
 app.use(Express.json())
