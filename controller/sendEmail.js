@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer');
 
 module.exports = async function sendEmail(emailData) {
-    console.log(emailData.body);
 
     // Check if body is present and set emailData to emailData.body if necessary
     emailData = emailData.body ? emailData.body : emailData;
@@ -29,7 +28,7 @@ module.exports = async function sendEmail(emailData) {
 
     try {
         await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully!');
+
         return { success: true, message: 'Email sent successfully!' }; // Return success response if email is sent
     } catch (error) {
         console.error('Error sending email:', error);
