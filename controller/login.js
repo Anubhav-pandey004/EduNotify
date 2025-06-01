@@ -5,7 +5,6 @@ const jwt=require("jsonwebtoken")
 const login=async(req,res)=>{
     try {
         const {email,password}=req.body
-        console.log("hey");
         if(!email){
             throw new Error("Email is required")
         }
@@ -15,7 +14,6 @@ const login=async(req,res)=>{
         }
 
         const user = await UserModel.findOne({email})
-        console.log("Useer is ",user);
 
         if(!user){
             res.json({
