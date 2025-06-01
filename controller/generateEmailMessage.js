@@ -42,7 +42,6 @@ Thank you for your continued support in ${Student_Name}'s academic journey.
 Best regards,
 School Administration`;
 
-    console.log(message);
 
     return {
         email: Parent_Email,
